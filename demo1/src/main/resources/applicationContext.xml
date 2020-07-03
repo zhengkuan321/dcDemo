@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/context
+
+        http://www.springframework.org/schema/context/spring-context-2.5.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+        http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-3.1.xsd"
+       xmlns:task="http://www.springframework.org/schema/task">
+
+
+    <!-- enable component scanning (beware that this does not enable mapper scanning!) -->
+   <!-- <context:component-scan base-package="cn.sinokj.service" />
+    <context:component-scan base-package="cn.sinokj.persistence" />-->
+    <!-- enable autowire -->
+    <!--<context:annotation-config />
+    <context:component-scan base-package="cn.sinokj.timingplantimer.jobmanager" use-default-filters="false"></context:component-scan>-->
+    <!-- 数据库配置文件 -->
+    <import resource="dataSource.xml" />
+
+    <!-- enable transaction demarcation with annotations -->
+    <tx:annotation-driven />
+    <!-- aop 配置 -->
+    <!-- <aop:aspectj-autoproxy/> -->
+    <!--task注入 -->
+    <task:annotation-driven/>
+
+    <!--自动扫描Mapper类，而且自动注入 scan for mappers and let them be autowired -->
+    <!-- <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="cn.sinokj.persistence" />
+    </bean> -->
+
+    <!-- 注入Spring的工具类，可以在web中引用spring bean -->
+    <!--<bean id="springContextUtil" class="cn.sinokj.common.util.SpringContextUtil" />-->
+    <!--<bean id="initQuartzJob" class="cn.sinokj.timingplantimer.jobmanager.TimingPlanJob"  init-method="sendCommand"  lazy-init="false"/>-->
+
+</beans>

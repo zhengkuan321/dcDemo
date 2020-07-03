@@ -1,0 +1,68 @@
+#####################################
+#######此文件为系统运行的相关参数配置 #########
+#####################################
+
+[qiniu]
+accessKey = jpxhSzmqw9Dsv6vXwxShQRhCkW-q5v4X_xhnultg
+secretKey = z3MaRjjtmhbsJVXB4GLuEeNqjDZwOmTzx_cbaXXU
+imagebucket = cloundparty
+;image拼接前缀
+imageurl = http://qiniu.ewanyuan.cn
+htmlbucket = bbs-html
+;html拼接前缀
+htmlurl = http://opcuepwbc.bkt.clouddn.com/
+############ END #####################
+
+#极光推送
+############ BEGIN ####################
+[jpush]
+jpush_appKey = 0e5856a3ac3607d7766541e7
+jpush_secret = c261d243d7daaedad1f7e4bd
+############ END #####################
+
+#系统扫描间隔
+############ BEGIN ####################
+[SYSSCAN]
+;tomcat 扫描心跳超时的间隔（秒）,0表示不扫描
+Interval = 0
+;页面心跳超过n秒不发心跳则认为操作员下线
+OffLineTime = 300
+;浏览器端每隔n秒发送心跳,0 表示不发心跳
+HeartInterval = 0
+############ END #####################
+
+#常用配置
+############ BEGIN ####################
+[sys]
+sys_machineNum: 01
+defaultPage = 1
+defaultPageSize = 100000000
+############ END #####################
+
+
+############ BEGIN ###################
+[wx]
+;商户号
+mch_id = 1512088551
+;密钥
+api_key = dygjparkc9bjcygbdygjparkc9bjcygb
+app_id = wx2d713e539bb99681
+app_secret = aaafe04c770977cd8733387a9ca00d19
+
+;通用回调地址www.sinokj.cn dygjpark.com
+return_url = http://www.sinokj.cn:9999/smartPark/wxPay/checkOrder.do
+notify_url = http://www.sinokj.cn:9999/smartPark/wxPay/notify.do
+############ END #####################
+
+
+#常用配置
+############ BEGIN ####################
+[sys]
+sys_machineNum: 01
+[pdf]
+pdf_prefix: http://com.dc.ewanyuan.cn/cloudPartyApp/
+
+dc_pdf_prefix: http://com.dc.ewanyuan.cn/CloudPartyManagerSecond/
+
+############ BEGIN ####################
+
